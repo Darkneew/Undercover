@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Undercover</title>
+        <link rel="icon" type="image/png" href="/game/icon.png" />
+        <link rel="stylesheet" href="/game/style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    </head>
+    <body>
+        <!-- Before the begining of the game -->
+        
+        <div id="loading">
+            LOADING
+        </div>
+        <section id="abovechat">   
+        
+        <section id="Waiting">
+            <div id="waitcontainer">
+                <div id="heytxt">Hey, <span class="pseudo"></span>!</div>
+                <div id="waititle">Waiting: No one</div>
+                <ul id="waitingList"></ul>
+                <div id="waitcontnum"></div>
+            </div>
+        </section>
+        </section>
+          <a id="home" href="/lobby"><i class="fas fa-home"></i></a>
+          <button id="ready">NOT READY</button>
+          
+        <section id="chat">
+            <div class="container clearfix">
+                <div class="chat">      
+                    <div class="chat-history">
+                        <ul id="messages">
+                        </ul>
+                    </div>
+                    <!--<div id = "scroll-down-button">Scroll down</div>-->
+                    <div class="chat-message clearfix">
+                        <form id="chatform" autocomplete="off">
+                        <input name="message-to-send" id="message-to-send" placeholder ="Type your message"/>
+                        <button id="sbutton"><span id="onpc">Send</span><i id="ontel" class="fas fa-arrow-right"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="launching">
+            <div id="timer">10</div>
+        </section>
+        <section id="ingame">
+            <div id="players"></div>
+            <div id="inputcontainer">    
+                <form autocomplete="off" id="inputform">
+                    <input type="text" id="input">
+                    <button id="send"><i class="fas fa-angle-right"></i></button>
+                </form>
+            </div>
+        </section>
+  	    <script src="/socket.io/socket.io.js"></script>
+  	    <script src="/game/script.js"></script>
+    </body>
+</html>

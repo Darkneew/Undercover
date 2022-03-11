@@ -1,0 +1,14 @@
+{
+    "min_people": 2,
+    "max_people": 15,
+    "words":[
+        ["piscine","jacuzzi"],
+        ["T-shirt","pantalon"],
+        ["chaise","table"],
+        ["dauphin","poisson"],
+        ["pizza","tacos"],
+        ["crayon","stylo"],
+        ["arbre","fleur"],
+        ["physique","chimie"]
+    ]
+}

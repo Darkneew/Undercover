@@ -1,0 +1,309 @@
+@import url('https://rsms.me/inter/inter-ui.css');
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+@keyframes fadeIn {
+0% {top:110vh;}
+50% {top:0vh;}
+100% {top:0vh;}
+}
+
+::selection { 
+  background: #2D2F36;
+}
+::-webkit-selection {
+  background: #2D2F36;
+}
+::-moz-selection {
+  background: #2D2F36;
+}
+
+button:active {
+outline: none;
+border: none;
+}
+
+button:focus {outline:0;}
+
+body {
+  background: white;
+  font-family: 'Inter UI', sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+}
+.page {
+  background: #e2e2e5;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 40px);
+  position: absolute;
+  width: calc(100% - 40px);
+}
+
+@media (max-width: 600px) {
+  .page {
+    height: calc(100% - 20px);
+    position: absolute;
+    width: calc(100% - 20px);
+  }
+}
+.container {
+  display: flex;
+  height: 352px;
+  margin: 0 auto;
+  width: 704px;
+}
+@media (max-width: 600px) {
+  .container {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    height: 87%;
+    width: 90%;
+  }
+}
+
+/* loading screen */
+#loading {
+    height: 100%;
+    width: 100%;
+    background-color: #434651;
+    position: fixed;
+    top: 110vh;
+    left: 0px;
+    z-index: 11;
+    font-size: 20vh;
+    text-align: center;
+    color: #eeeeee;
+    display: none;
+    font-weight: bold;
+    padding-top: 35vh;
+}
+
+#errormsg {
+  z-index: 10;
+  position: fixed;
+  bottom: 5vh;
+  right: 3vw;
+  height: 8vh;
+  width: 30vw;
+  color: #D8000C;
+  background-color: #FFD2D2;
+}
+
+#errormsg i {
+  margin: 1.81vh 1.3vw;
+  font-size:4.36vh;
+  vertical-align:middle;
+}
+
+@media (max-width: 600px) {
+  #errormsg {
+    width: 80vw;
+    top: 5vh;
+  }
+  #errormsg i {
+    margin: 1.81vh 5vw;
+  }
+}
+
+.left {
+  background: white;
+  height: 90%;
+  top: 5%;
+  position: relative;
+  width: 50%;
+}
+@media (max-width: 600px) {
+  .left {
+    position: absolute;
+    top: 0%;
+    height: 45%;
+    left: 5%;
+    width: 90%;
+    max-height: 297px;
+  }
+}
+
+@media (max-width: 600px) {
+  #titlebox {
+    position: absolute;
+    top: 0%;
+    height: 10%;
+    width: 100%;
+  }
+}
+
+
+.title {
+  text-align: center;
+  font-size: 500%;
+  font-weight: 900;
+  margin: 50px 40px 40px;
+}
+
+@media (max-width: 600px) {
+  .title {
+    text-align: center;
+    font-size: 7vh;
+    left: 10%;
+    font-weight: 800;
+    margin: 0px 0px 0px;
+  }
+}
+
+/* avatar selection */
+.arrow {
+  height: calc(100% - 15.4px);
+  border: none;
+  font-weight: 700;
+  font-size: 200%;
+  background-color: transparent;
+}
+
+#leftarrow {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+#rightarrow {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+#avatarimage {
+  height:70%;
+  width: 70%;
+}
+
+.avatarselector {
+  position: relative;
+  text-align: center;
+  color: #999;
+  font-size: 15.4px;
+  line-height: 1.6;
+  margin: 44px;
+}
+
+.right {
+  background: #474A59;
+  color: #F1F1F2;
+  position: relative;
+  width: 50%;
+}
+@media (max-width: 600px) {
+  .right {
+    position : fixed;
+    bottom: 3%;
+    left: 5%;
+    height: 70vw;
+    width: 90vw;
+  }
+}
+svg {
+  position: absolute;
+  width: 352px;
+}
+path {
+  fill: none;
+  stroke: url(#linearGradient);;
+  stroke-width: 4;
+  stroke-dasharray: 240 1386;
+}
+.form {
+  position: absolute;
+  margin: 13%;
+}
+
+@media (max-width: 600px) {
+  .form {
+    margin: 0%;
+    left: 5%;
+    height: 100%;
+    width: 90%;
+  }
+}
+
+label {
+  color:  #c2c2c5;
+  display: block;
+  font-size: 15.4px;
+  height: 17.6px;
+  margin-top: 22px;
+  margin-bottom: 5.5px;
+}
+input {
+  background: transparent;
+  border: 0;
+  color: #f2f2f2;
+  font-size: 22px;
+  height: 33px;
+  line-height: 33px;
+  outline: none !important;
+  width: 100%;
+}
+
+@media(max-width: 600px) {
+  #textusername{
+    left: 10%;
+    font-size: 5vw;
+    position: absolute;
+    top: 0%;
+  }
+}
+@media(max-width: 600px) {
+  #name{
+    left: 10%;
+    font-size: 5vw;
+    height: 7vw;
+    position: absolute;
+    top: 20%;
+  }
+}
+@media(max-width: 600px) {
+  #textid{
+    left: 10%;
+    font-size: 5vw;
+    position: absolute;
+    top: 30%;
+  }
+}
+@media(max-width: 600px) {
+  #id{
+    left: 10%;
+    font-size: 5vw;
+    height: 7vw;
+    position: absolute;
+    top: 50%;
+  }
+}
+input::-moz-focus-inner { 
+  border: 0; 
+}
+#submit {
+  color: #707075;
+  margin-top: 44px;
+  transition: color 300ms;
+  cursor: pointer;
+}
+
+@media(max-width: 600px) {
+  #submit{
+    position: absolute;
+    left: 20%;
+    width: 60%;
+    top: 60%;
+  }
+}
+#submit:focus {
+  color: #f2f2f2;
+}
+#submit:active {
+  color: #d0d0d2;
+}

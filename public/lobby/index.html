@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Undercover</title>
+        <link rel="icon" type="image/png" href="/game/icon.png" />
+        <link rel="stylesheet" href="/lobby/style.css" />
+        <script>
+            const change = (name) => {
+                document.cookie = `name=${encodeURIComponent(name)};path=/`;
+            };
+        </script>
+    </head>
+    <body>
+        <div id="loading">
+            LOADING
+        </div>
+        <div class="page">
+            <div id = "titlebox">
+              <div class="title">Undercover</div>
+            </div>
+            <div class="container">
+                <div class="left">
+                    <div class="avatarselector">
+                        <div>Select your avatar</div>
+                        <button class="arrow" id="leftarrow">&lt</button>
+                        <img id="avatarimage" alt="avatar" src="/avatars/3.png"/>
+                        <button class="arrow" id="rightarrow">&gt</button>
+                    </div>
+                </div>
+                <div class="right">
+                    <svg id="viewbox" viewBox="0 0 320 300">
+                        <defs>
+                            <linearGradient
+                            inkscape:collect="always"
+                            id="linearGradient"
+                            x1="13"
+                            y1="193.49992"
+                            x2="307"
+                            y2="193.49992"
+                            gradientUnits="userSpaceOnUse">
+                                <stop
+                                    style="stop-color:#ff00ff;"
+                                    offset="0"
+                                    id="stop876" />
+                                <stop
+                                    style="stop-color:#ff0000;"
+                                    offset="1"
+                                    id="stop878" />
+                            </linearGradient>
+                        </defs>
+                        <path id ="animationpath" d="m 40,120.00016 239.99984,-3.2e-4 c 0,0 24.99263,0.79932 25.00016,35.00016 0.008,34.20084 -25.00016,35 -25.00016,35 h -239.99984 c 0,-0.0205 -25,4.01348 -25,38.5 0,34.48652 25,38.5 25,38.5 h 215 c 0,0 20,-0.99604 20,-25 0,-24.00396 -20,-25 -20,-25 h -190 c 0,0 -20,1.71033 -20,25 0,24.00396 20,25 20,25 h 168.57143" />
+                    </svg>
+                    <div class="form">
+                        <form autocomplete="off" action="/" method="POST" id="form">
+                            <label id="textusername" for="name">Username</label>
+                            <input type="text" onchange="change(this.value)" maxlength="15" id="name" name="name">
+                            <label id = "textid" for="id">Game Id (optional)</label>
+                            <input type="text" name="id" id="id">
+                            <input type="submit" id="submit" value="Play">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/lobby/anime.min.js"></script>
+        <script src="/lobby/script.js"></script>
+    </body>
+</html>

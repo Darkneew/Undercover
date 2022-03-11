@@ -1,0 +1,523 @@
+@import url('https://rsms.me/inter/inter-ui.css');
+
+@keyframes fadeOut {
+0% {top:0vh;}
+100% {top:110vh;}
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+::selection { 
+  background: #2D2F36;
+}
+::-webkit-selection {
+  background: #2D2F36;
+}
+::-moz-selection {
+  background: #2D2F36;
+}
+
+body {
+  background: #C5DDEB;
+  font-family: 'Inter UI', sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+/* loading screen */
+#loading {
+    height: 100%;
+    width: 100%;
+    background-color: #434651;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    font-size: 20vh;
+    text-align: center;
+    color: #eeeeee;
+    font-weight: bold;
+    padding-top: 35vh;
+}
+
+/* ingame section*/
+#ingame {
+    display: none;
+    position: absolute;
+    top:1vh;
+    left: 0.5vw;
+    height: 98vh;
+    width: 99vw;
+}
+
+.avatar {
+    width: 8vw;
+    height: 8vw;
+    border-radius: 5vw;
+}
+
+#players {
+    position: relative;
+    left: 2.25vw;
+    top: 5vh;
+    height: 79vh;
+    width: 53vw;
+}
+
+.player {
+    text-align: center;
+    height: 25vh;
+    width: 9vw
+}
+
+#inputcontainer {
+    position: absolute;
+    bottom: 2vh;
+    background: #C5DDEB;
+    left: 2vw;
+    border-bottom: solid 1px black;
+    width: 53vw;
+    height: 7vh;
+    box-shadow: 0px 0px 44px 17px rgba(0,0,0,0.22);
+    -webkit-box-shadow: 0px 0px 44px 17px rgba(0,0,0,0.22);
+    -moz-box-shadow: 0px 0px 44px 17px rgba(0,0,0,0.22);
+    border-radius: 2vh;
+    cursor: not-allowed;
+}
+
+#input {
+    display: none;
+    background: #C5DDEB;
+    border: none;
+    height: 7vh;
+    width: calc(53vw - 7vh);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-bottom: solid 1px black;
+    border-radius: 2vh 0px 0px 2vh;
+    font-size: 3vh;
+    padding-left: 1vw; 
+}
+
+#send {
+    cursor: pointer;
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    height: 7vh;
+    width: 7vh;
+    border-radius: 0% 2vh 2vh 0%;
+    border: none;
+    background-color:rgb(172, 206, 226);
+    border-bottom: solid 1px black;
+    border-left: solid 1px black;
+    font-size: 2.9vh;
+}
+
+#send:focus {outline:none!important;}
+#input:focus {outline:none!important;}
+
+.wordtitle {
+    padding-top: 1vh;
+    font-weight: 600;
+    font-style: italic;
+}
+
+/* Launching section */
+#timer {
+    display: none;
+    position: absolute;
+    width: 40vw;
+    height: 30vh;
+    bottom: 35vh;
+    left: calc(30vw - 245px);
+    font-size: 18vh;
+    padding: 0;
+    background-color: #282936;
+    border-radius: 15vh;
+    text-align: center;
+    color: #C5DDEB;
+    line-height: 30vh;
+}
+
+/* Waiting list */
+
+#waitcontainer {
+    padding-left: 2vw;
+    position: absolute;
+}
+#heytxt {
+  padding-top: 2vh;
+  font-size: 5vh;
+}
+#waititle {
+  padding-top: 2vh;
+  font-size: 4vh;
+}
+
+#waitingList{
+  padding-top: 2vh;
+}
+
+
+#ready {
+    position: absolute;
+    width: 20vw;
+    height: 12vh;
+    bottom: 20vh;
+    left: 25vw;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    font-size: 5vh;
+    vertical-align: middle;
+    text-decoration: none;
+    padding: 0;
+    background-color: #800000;
+    border-radius: 6vh;
+    color: #C5DDEB;
+}
+
+  #waitcontnum {
+    position: absolute;
+    font-size: 4vw;
+    top: 48vw;
+    flex-direction: row;
+  }
+
+
+
+#home {
+  position: absolute;
+  width: 16vh;
+  height: 16vh;
+  bottom: 18vh;
+  left: 15vw;
+  z-index: 6;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  padding: 0;
+  background-color: #282936;
+  border-radius: 6vh;
+  color: #C5DDEB;
+  text-align: center;
+  padding-top: 3vh;
+  font-size: 8vh;
+}
+
+
+
+
+.fas .fa-home {
+  font-size: 20vh;
+}
+
+
+/* Chat */
+.container {
+    z-index: 5;
+    position: absolute;
+    top: 2vh;
+    right: 2vw;
+    width: 40vw;
+    height: 96vh;
+    background: #444753;
+    border-radius: 21px;
+}
+
+
+.chat li {
+    list-style-type: none;
+}
+
+.chat {
+    position: absolute;
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;
+    float: left;
+    background: #F2F5F8;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #434651;
+}
+
+
+
+.chat .chat-header img {
+    float: left;
+}
+
+.chat .chat-header .chat-about {
+    float: left;
+    padding-left: 10px;
+    margin-top: 6px;
+}
+
+.chat .chat-header .chat-with {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.chat .chat-header .chat-num-messages {
+    color: #92959E;
+}
+
+.chat .chat-header .fa-star {
+    float: right;
+    color: #D8DADF;
+    font-size: 20px;
+    margin-top: 12px;
+}
+
+.chat-history {
+    padding: 30px 30px 20px;
+    border-bottom: 2px solid white;
+    overflow-y: scroll;
+    height: 80vh;
+}
+
+
+
+.message-data {
+    margin-bottom: 15px;
+}
+
+.message-data-time {
+    color: lighten(#92959E, 8%);
+    padding-left: 6px;
+}
+
+.message {
+    color: white;
+    padding: 18px 20px;
+    line-height: 26px;
+    font-size: 16px;
+    border-radius: 7px;
+    margin-bottom: 30px;
+    word-wrap: break-word;
+    width: 90%;
+    position: relative;
+}
+
+.message ::after {
+    bottom: 100%;
+    left: 7%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-bottom-color: #86BB71;
+    border-width: 10px;
+    margin-left: -10px;
+}
+
+.my-message {
+    background: #86BB71;
+}
+
+.other-message {
+    background: #94C2ED;
+}
+
+#scroll-down-button {
+    background-image: linear-gradient(#eeeeee, #d4d4d4);
+    color: rgb(154, 175, 235);
+    text-align: center;
+    padding: 5px;
+    font-size: 3vh;
+    font-weight: 500;
+    position : absolute;
+    left : 0px;
+    top: 70vh;
+    height: 10vh;
+    width: 97%;
+}
+
+.server-message{
+  background: #444753;
+}
+
+.other-message ::after {
+    border-bottom-color: #94C2ED;
+    left: 93%;
+}
+
+.other-message ::after {
+    border-bottom-color:  #444753;
+    left: 93%;
+}
+
+.chat-message {
+    padding: 20px;
+}
+
+
+
+#message-to-send {
+    width: 100%;
+    border: none;
+    padding: 10px 10px;
+    font: 14px/22px "Lato", Arial, sans-serif;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    resize: none;
+}
+
+#sbutton {
+    float: right;
+    color: #94C2ED;
+    font-size: 16px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    background: #F2F5F8;
+}
+/*petite fleche sur telephon*/
+#ontel {
+    display: none;
+}
+
+#sbutton ::hover {
+    color: darken(#94C2ED, 7%);
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.float-right {
+    float: right;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+/* version telephone */
+@media(max-width: 600px) {
+/* au dessus du chat*/
+  #abovechat{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+
+    height: 30%;
+    width: 100%;
+    background-color: aqua;
+  }
+  #waititle {
+    padding-top: 0vh;
+    font-size: 3vh;
+  }
+  #waitingList{
+    position: absolute;
+    padding-top: 0vh;
+    column-count: 3;
+    column-fill: auto;
+    height: 9vh;
+  }
+  /*bouttons*/
+    #home{
+  border-radius: 3vw;
+  padding-top: 2vw;
+  width: calc(30vh - 30vw);
+  height: calc(30vh - 30vw);
+  top: calc(2vh - 2vw);
+  left: auto;
+  right: calc(2vh - 2vw);
+  font-size: 6vh;
+  }
+
+  #ready {
+    border-radius: 3vw;
+    top: calc(34vh - 34vw);
+    left: auto;
+    right: calc(2vh - 2vw);
+    width: calc(30vh - 30vw);
+    height: calc(30vh - 30vw);
+    font-size: 3vh;
+  } 
+/* chat container*/
+  .container {
+    top: auto;
+    height: 68%;
+    bottom: 1vw;
+    width: 96vw;
+    left: 2vw;
+    border-top-left-radius: 6vw;
+    border-top-right-radius: 6vw;
+    border-bottom-left-radius: 2vw;
+    border-bottom-right-radius:2vw;
+    }
+
+  .chat-history {
+    height: 85%;
+  }
+
+
+
+  
+  #onpc{
+    display: none;
+  }
+  #ontel{
+    display : inline-block;
+    
+  }
+
+  #sbutton {
+    background-image: linear-gradient(to right, #F5F5F5, #94C2ED);
+    position: absolute;
+    border-top-right-radius: 2vw;
+    border-bottom-right-radius: 2vw;    
+    right: 1vw;
+    top: 2vw;
+    height: 12vw;
+    width: 16vw;
+  }
+
+  .chat-message {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    height: 15%;
+    padding: 2vw;
+  }
+  .chat {
+      border-top-left-radius: 6vw;
+      border-top-right-radius: 6vw;
+      border-bottom-left-radius: 2vw;
+      border-bottom-right-radius:2vw;
+      background: #F2F5F8;
+      border-bottom: 2px solid white;
+  }
+
+  #message-to-send{
+   height: 12vw;
+   border-radius: 2vw;
+  }
+
+  
+}
